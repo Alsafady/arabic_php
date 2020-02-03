@@ -1,0 +1,8 @@
+
+arabic_php.default_controller_convert:
+  path: '/arabic_php/convert'
+  defaults:
+    _controller: '\Drupal\arabic_php\Controller\DefaultController::convert'
+    _title: 'convert'
+  requirements:
+    _permission: 'access content'
