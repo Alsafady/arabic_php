@@ -5,6 +5,8 @@ namespace Drupal\arabic_php\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Arphp\Glyphs;
 
+
+
 /**
  * Class DefaultController.
  */
@@ -17,11 +19,22 @@ class DefaultController extends ControllerBase {
    *   Return Hello string.
    */
   public function convert() {
+
+    $Arabic = new Glyphs;
+
+    $text = 'بسم الله الرحمن الرحيم';
+    $text = $Arabic->utf8Glyphs($text);
+
+
+
     return [
       '#type' => 'markup',
-      '#markup' => $this->t('Implement method: convert') . Glyphs::utf8Glyphs('ةبرجت'),
+      '#markup' => $text,
 
     ];
+
+
+
   }
 
 }
