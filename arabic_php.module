@@ -22,3 +22,24 @@ function arabic_php_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+
+
+
+
+/**
+ * @file
+ * Contains hook implementations for the Text On Image Ar module.
+ */
+
+/**
+ * Implements hook_image_effects_text_overlay_text_alter().
+ */
+function arabic_php_image_effects_text_overlay_text_alter(&$text, ConfigurableImageEffectBase $image_effect) {
+  // Skip if the effect is not TextOverlayImageEffect or an alternative
+  // implementation.
+  if ($image_effect->getPluginId() !== "image_effects_text_overlay") {
+    return;
+  }
+  $text = 'my altered text';
+}
